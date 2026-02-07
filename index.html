@@ -105,6 +105,20 @@
   margin-bottom: 22px;
   line-height: 1.9;
 }
+
+    body::after {
+  content: "Rijuta © Aditya Narnoliya";
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 9999;
+    }
     
   </style>
 </head>
