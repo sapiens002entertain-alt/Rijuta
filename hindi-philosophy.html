@@ -125,23 +125,41 @@ footer {
 
   #scrollTopBtn {
   position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 90px;            /* bottom se thoda upar */
+  right: 30px;             /* right side gap */
   
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  border: none;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  padding: 14px 18px;
-  font-size: 22px;
-  cursor: pointer;
   
+  background: linear-gradient(145deg, #f5e8c7, #e6d3a3);
+  color: #4a3b1f;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 8px 15px rgba(0, 0, 0, 0.25),   /* neeche ki parchhayi */
+    inset 0 2px 3px rgba(255,255,255,0.6); /* upar light */
+
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 999;
-  }
+  transition: opacity 0.4s ease, transform 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 3px rgba(255,255,255,0.7);
+}
   
 </style>
 
