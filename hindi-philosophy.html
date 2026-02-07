@@ -122,6 +122,26 @@ footer {
       pointer-events: none;
       z-index: 9999;
   }
+
+  #scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 14px 18px;
+  font-size: 22px;
+  cursor: pointer;
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+  }
   
 </style>
 
@@ -473,7 +493,33 @@ footer {
   </div>
 </section>
 
+<button id="scrollTopBtn">↑</button>
 
+<script>
+  const btn = document.getElementById("scrollTopBtn");
+  let hideTimeout;
+
+  window.addEventListener("scroll", () => {
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      btn.style.opacity = "0";
+      btn.style.pointerEvents = "none";
+    }, 3000);
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
 
 
 
