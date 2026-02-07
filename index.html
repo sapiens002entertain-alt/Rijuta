@@ -330,11 +330,32 @@ I let them!
     }, 3000);
   });
 
+  <script>
+  const btn = document.getElementById("scrollTopBtn");
+  let hideTimeout;
+
+  window.addEventListener("scroll", () => {
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      btn.style.opacity = "0";
+      btn.style.pointerEvents = "none";
+    }, 3000);
+  });
+
   btn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    // 🔪 kill momentum scroll instantly
+    window.scrollTo({ top: window.scrollY, behavior: "auto" });
+
+    // 🚀 then smooth scroll to top
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }, 10);
   });
 </script>
 
