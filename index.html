@@ -91,31 +91,36 @@
   font-size: 1.2rem;
   color: #2b2b2b;
   background: #fff6dc;       /* cream vibe */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+  border-radius: 14px;
+  display: inline-block;
+  cursor: pointer;
+  
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.12),
+    inset 0 -2px 0 
+    rgba(0,0,0,0.08);
+  
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .lang-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18),
+    inset 0 -2px 0 rgba(0,0,0,0.1);
 }
 
-  .lang-btn {
-    outline: none;
-  -webkit-tap-highlight-color: transparent;
-    }
-
-    .lang-btn {
-      transform: translateY(2px);
+    .lang-btn:active {
+  transform: translateY(2px);
   box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.25),
-    inset 0 4px 6px rgba(0,0,0,0.2);
+    0 4px 8px rgba(0,0,0,0.25),
+    inset 0 4px 6px rgba(0,0,0,0.25);
     }
-
-    .lang-btn {
-      transition: opacity 0.4s ease, transform 0.15s ease, box-shadow 0.15s ease;
-    }
+  
 
 .poem p {
   margin-bottom: 22px;
