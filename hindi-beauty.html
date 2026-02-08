@@ -123,6 +123,112 @@ footer {
       z-index: 9999;
   }
 
+  #scrollTopBtn {
+  position: fixed;
+  bottom: 90px;            /* bottom se thoda upar */
+  right: 30px;             /* right side gap */
+  
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  
+  background: linear-gradient(145deg, #f5e8c7, #e6d3a3);
+  color: #4a3b1f;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 8px 15px rgba(0, 0, 0, 0.25),   /* neeche ki parchhayi */
+    inset 0 2px 3px rgba(255,255,255,0.6); /* upar light */
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 3px rgba(255,255,255,0.7);
+}
+
+    #scrollTopBtn {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+    }
+
+    #scrollTopBtn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.25),
+    inset 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    #scrollTopBtn {
+  transition: opacity 0.4s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }#scrollTopBtn {
+  position: fixed;
+  bottom: 90px;            /* bottom se thoda upar */
+  right: 30px;             /* right side gap */
+  
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  
+  background: linear-gradient(145deg, #f5e8c7, #e6d3a3);
+  color: #4a3b1f;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 8px 15px rgba(0, 0, 0, 0.25),   /* neeche ki parchhayi */
+    inset 0 2px 3px rgba(255,255,255,0.6); /* upar light */
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 3px rgba(255,255,255,0.7);
+}
+
+    #scrollTopBtn {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+    }
+
+    #scrollTopBtn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.25),
+    inset 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    #scrollTopBtn {
+  transition: opacity 0.4s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
 </style>
 
 <h2>सौन्दर्य</h2>
@@ -201,4 +307,30 @@ footer {
 <p>जिसे देख मन प्रफुल्लित हो गया।।</p>
   </div>
 </section>
+
+<script>
+  const btn = document.getElementById("scrollTopBtn");
+  let hideTimeout;
+
+  window.addEventListener("scroll", () => {
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      btn.style.opacity = "0";
+      btn.style.pointerEvents = "none";
+    }, 3000);
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
 
