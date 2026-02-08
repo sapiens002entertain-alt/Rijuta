@@ -69,6 +69,25 @@ section {
   margin-bottom: 80px;
 }
 
+  .poem {
+  background: rgba(255,255,255,0.25);
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  }
+
+  .poem {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 /* ===== POEM TITLE ===== */
 .poem-title {
   text-align: center;
