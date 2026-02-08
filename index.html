@@ -331,18 +331,12 @@ I let them!
   });
 
   btn.addEventListener("click", () => {
-    // 🔪 kill momentum scroll instantly
-    window.scrollTo({ top: window.scrollY, behavior: "auto" });
-
-    // 🚀 then smooth scroll to top
-    setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }, 10);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
-</script>
+  </script>
 
 </body>
 </html>
